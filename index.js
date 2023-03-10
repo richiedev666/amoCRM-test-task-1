@@ -38,6 +38,8 @@ class Timer {
     this.clearInputValue();
 
     this.animateTimer();
+
+    this.disableInput();
   }
 
   stopTimer() {
@@ -46,6 +48,8 @@ class Timer {
     this.buttonEl.textContent = "Start";
 
     this.resetTimer();
+
+    this.enableInput();
   }
 
   animateTimer() {
@@ -83,6 +87,14 @@ class Timer {
     if (seconds < 10) seconds = `0${seconds}`;
 
     return `${hours}:${minutes}:${seconds}`;
+  }
+
+  disableInput() {
+    this.inputEl.disabled = true;
+  }
+
+  enableInput() {
+    this.inputEl.disabled = false;
   }
 
   clearInputValue() {
