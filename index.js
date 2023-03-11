@@ -10,6 +10,11 @@ class Timer {
   }
 
   init() {
+    this.initInputEventListener();
+    this.initButtonEventListener();
+  }
+
+  initInputEventListener() {
     this.inputEl.addEventListener("input", (event) => {
       const value = parseInt(event.target.value);
 
@@ -21,7 +26,9 @@ class Timer {
         this.seconds = value;
       }
     });
+  }
 
+  initButtonEventListener() {
     this.buttonEl.addEventListener("click", (event) => {
       event.preventDefault();
 
